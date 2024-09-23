@@ -1,34 +1,128 @@
+<?php
+session_start();
+@$login=$_POST["login"];
+@$pass=$_POST["pass"];
+@$envoyer=$_POST["envoyer"];
+$erreur="";
+if (isset($envoyer)){
+        if($login=='SupTechVideo' && $pass=='V!GIE@2024'){
+            $_SESSION["authoriser"]="oui";
+            header("location:servicesup/techvideo.php");
+                    }
+         elseif ($login=='SupTechAlarme' && $pass=='V!GIE@2024') {
+            $_SESSION["authoriser"]="oui";
+            header("location:servicesup/techalarme.php");
+                    }
+         elseif ($login=='DirTechVigie' && $pass=='V!GIE@2024') {
+            $_SESSION["authoriser"]="oui";
+            header("location:servicedir/dashboarddirtech.php");
+                    }
+         elseif ($login=='SupTls1' && $pass=='V!GIE@2024') {
+            $_SESSION["authoriser"]="oui";
+            header("location:servicesup/tls1.php");
+                    }
+         elseif ($login=='SupTls2' && $pass=='V!GIE@2024') {
+            $_SESSION["authoriser"]="oui";
+            header("location:servicesup/tls2.php");
+                    }
+         elseif ($login=='SupTls3' && $pass=='V!GIE@2024') {
+            $_SESSION["authoriser"]="oui";
+            header("location:servicesup/tls3.php");
+                    }
+         elseif ($login=='DirTlsVigie' && $pass=='V!GIE@2024') {
+            $_SESSION["authoriser"]="oui";
+            header("location:servicedir/dashboarddirtls.php");
+                    }
+         elseif ($login=='SupInter1' && $pass=='V!GIE@2024') {
+            $_SESSION["authoriser"]="oui";
+            header("location:servicesup/inter1.php");
+                    }
+         elseif ($login=='SupInter2' && $pass=='V!GIE@2024') {
+            $_SESSION["authoriser"]="oui";
+            header("location:servicesup/inter2.php");
+                    }
+         elseif ($login=='DirInterVigie' && $pass=='V!GIE@2024') {
+            $_SESSION["authoriser"]="oui";
+            header("location:servicedir/dashboarddirint.php");
+                    }                                               
+         elseif ($login=='SupInc1' && $pass=='V!GIE@2024') {
+            $_SESSION["authoriser"]="oui";
+            header("location:servicesup/inc1.php");
+                     }
+         elseif ($login=='SupInc2' && $pass=='V!GIE@2024') {
+            $_SESSION["authoriser"]="oui";
+            header("location:servicesup/inc2.php");
+                     }
+         elseif ($login=='DirIncVigie' && $pass=='V!GIE@2024') {
+            $_SESSION["authoriser"]="oui";
+            header("location:servicedir/dashboarddirinc.php");
+                     }        
+         elseif ($login=='AdminVigie' && $pass=='V!GIE@2024') {
+            $_SESSION["authoriser"]="oui";
+            header("location:serviceadmin/dashboardadmin.php");
+                    }
+        $erreur="erreur mot de passe ou nom d'utilisateur";
+                }
 
+                  
+?>
 <!DOCTYPE html>
+   <html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<html>
-<head>
-  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
-  <title>societe vigie</title>
-</head>
-<body>
-  <h1>
-   Liste technicien
-  </h1>
-  <ol>
-    <li>VIDEO</li>
-  <ul>
-    <li>Claudio</li>
-    <li>Michael</li>
-    <li>Alain</li>
-    <li>Brillant</li>
-    <li>Ruffin</li>
-  </ul>
-    <li>ALARME</li>
-  <ul>
-    <li>Mahery</li>
-    <li>Aldi</li>
-    <li>Lova</li>
-    <li>Antsa</li>
-    <li>Karl</li>
-  </ul>
-  </ol>
-  
-  
+      <!--=============== REMIXICONS ===============-->
+      <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+      <!--=============== CSS ===============-->
+      <link rel="stylesheet" href="assets/css/styles.css">
+
+      <title>Login vigie</title>
+   </head>
+   <body>
+      <div class="login">
+         <img src="assets/img/login-bg.png" alt="login image" class="login__img">
+
+         <form action="" class="login__form" method="post">
+            <h1 class="login__title">Login</h1>
+
+            <div class="login__content">
+               <div class="login__box">
+                  <i class="ri-user-3-line login__icon"></i>
+
+                  <div class="login__box-input">
+                     <input type="text" required class="login__input" id="login-user" name="login" placeholder=" ">
+                     <label for="login-user" class="login__label">user</label>
+                  </div>
+               </div>
+
+               <div class="login__box">
+                  <i class="ri-lock-2-line login__icon"></i>
+
+                  <div class="login__box-input">
+                     <input type="password" required class="login__input" id="login-pass" name="pass" placeholder=" ">
+                     <label for="login-pass" class="login__label">Password</label>
+                     <i class="ri-eye-off-line login__eye" id="login-eye"></i>
+                  </div>
+               </div>
+            </div>
+
+
+            <button type="submit" class="login__button" name="envoyer">Login</button>
+
+            <?php
+         echo $erreur?>
+         </form>
+       
+      </div>
+      
+      
+      
+      <!--=============== MAIN JS ===============-->
+      <script src="assets/js/main.js"></script>
+      
 </body>
+   </body>
 </html>
+
